@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: redis-deployment
-        image: redis-alpine
+        image: redis:5
         resources:
           limits:
             memory: "128Mi"

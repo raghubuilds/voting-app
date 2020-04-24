@@ -15,6 +15,9 @@ spec:
       containers:
       - name: db-deployment
         image: postgres:9.4
+        env:
+        - name: POSTGRES_PASSWORD
+          value: password
         resources:
           limits:
             memory: "128Mi"
