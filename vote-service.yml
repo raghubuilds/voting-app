@@ -4,6 +4,7 @@ metadata:
   name: vote-service
   namespace: vote-ns
 spec:
+  type: NodePort
   selector:
     app: vote-deployment
   ports:
