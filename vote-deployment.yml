@@ -9,7 +9,7 @@ spec:
   template:
     metadata:
       labels:
-        app: voe-deployment
+        app: vote-deployment
     spec:
       containers:
       - name: myapp
