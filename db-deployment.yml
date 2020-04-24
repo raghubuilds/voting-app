@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-deployment
+spec:
+  selector:
+    matchLabels:
+      app: db-deployment
+  template:
+    metadata:
+      labels:
+        app: db-deployment
+    spec:
+      containers:
+      - name: db-deployment
+        image: postgres:9.4
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - name: db-data
+          mountPath: /var/lib/postgresql/data
+      volumes:
+      - name: db-data
+        emptyDir: {}
